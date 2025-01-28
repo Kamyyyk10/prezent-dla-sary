@@ -6,8 +6,244 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HTML + CSS</title>
     <link rel="stylesheet" href="styles.css" />
+<style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        header h1 {
+            font-size: 3rem;
+            color: #ff6f61;
+            animation: bounce 2s infinite;
+        }
+        section {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideUp 1.5s ease-out;
+        }
+        h2 {
+            color: #ff6f61;
+        }
+        .gallery img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.2);
+        }
+        .quiz-question {
+            margin: 10px 0;
+            text-align: left;
+        }
+        .quiz-options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .quiz-options li {
+            margin: 5px 0;
+            background: #ffefef;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .quiz-options li:hover {
+            background: #ffd6d6;
+            transform: translateX(10px);
+        }
+        #countdown {
+            font-size: 1.5rem;
+            color: #333;
+            animation: pulse 1.5s infinite;
+        }
+        #quiz-result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e0ffe0;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            display: none;
+            animation: fadeIn 1.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
   </head>
   <body>
-    <h1>This is a simple HTML + CSS template!</h1>
-  </body>
+    <h1>This is a simple HTML + CSS template!</h1> 
+    <header>
+        <h1>Wszystkiego Najlepszego,Saro!</h1>
+        <p>Ta strona jest specjalnie dla Ciebie 🎉</p>
+    </header>
+
+    <section id="galeria">
+        <h2>Galeria wspomnień</h2>
+        <div class="gallery">
+            <img src="1.jpg" alt="Zdjęcie 1">
+            <img src="2.jpg" alt="Zdjęcie 2">
+            <img src="3.jpg" alt="Zdjęcie 3">
+            <img src="4.jpg" alt="Zdjęcie 1">
+            <img src="5.jpg" alt="Zdjęcie 2">
+            <img src="6.jpg" alt="Zdjęcie 3">
+            <img src="7.jpg" alt="Zdjęcie 1">
+            <img src="8.jpg" alt="Zdjęcie 2">
+            <img src="9.jpg" alt="Zdjęcie 3">
+            <img src="10.jpg" alt="Zdjęcie 1">
+            <img src="11.jpg" alt="Zdjęcie 2">
+            <img src="12.jpg" alt="Zdjęcie 3">
+            <img src="13.jpg" alt="Zdjęcie 3">
+            <img src="14.jpg" alt="Zdjęcie 1">
+            <img src="15.jpg" alt="Zdjęcie 2">
+            <img src="16.jpg" alt="Zdjęcie 3">
+            <img src="17.jpg" alt="Zdjęcie 1">
+            <img src="18.jpg" alt="Zdjęcie 2">
+        </div>
+    </section>
+
+    <section id="quiz">
+        <h2>Quiz: Jak dobrze nas znasz?</h2>
+        <div class="quiz-question">
+            <p>Pytanie 1: Gdzie najczęściej chodzimy zjeść?</p>
+            <ul class="quiz-options" data-correct="mcdonalds">
+                <li>Pizza</li>
+                <li>Sushi</li>
+                <li>Burgery</li>
+                <li>mcdonalds</li>
+            </ul>
+        </div>
+        <div class="quiz-question">
+            <p>Pytanie 2: Gdzie pierwszy raz spotkaliśmy sie grupką?</p>
+            <ul class="quiz-options" data-correct="Miedary">
+                <li>kato</li>
+                <li>W parku</li>
+                <li>u Wojtka</li>
+                <li>Miedary</li>
+            </ul>
+        </div>
+        <div class="quiz-question">
+            <p>Pytanie 3: co najbardziej lubimy robić W Grupce?</p>
+            <ul class="quiz-options" data-correct="Wszystko powyżej">
+                <li>wyzywać się</li>
+                <li>spacerowac</li>
+                <li>pić</li>
+                <li>Wszystko powyżej</li>
+            </ul>
+        </div>
+        <div class="quiz-question">
+            <p>Pytanie 4: Czy dobrze się czujesz w naszej grupce?</p>
+            <ul class="quiz-options" data-correct="A)Tak">
+                <li>A)Tak</li>
+                <li>B)A</li>
+                <li>C)B</li>
+                <li>D)C</li>
+            </ul>
+        </div>
+        <button id="check-answers">Sprawdź odpowiedzi</button>
+        <div id="quiz-result"></div>
+    </section>
+
+    <section id="muzyka">
+        <h2>Twoja lubiana piosenka</h2>
+        <audio controls>
+            <source src="c:\17\Rocky.mp3" type="audio/mpeg">
+            
+        </audio>
+    </section>
+
+    <section id="licznik">
+        <h2>Czas do Twoich kolejnych urodzin!</h2>
+        <div id="countdown">Ładowanie...</div>
+    </section>
+
+    <script>
+        const countdown = document.getElementById("countdown");
+        const nextBirthday = new Date("2026-01-30T00:00:00"); 
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = nextBirthday - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                countdown.textContent = `${days} dni, ${hours} godzin, ${minutes} minut, ${seconds} sekund do kolejnych urodzin!`;
+            } else {
+                countdown.textContent = "To Twoje urodziny! Wszystkiego najlepszego! 🎉";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        
+        const checkAnswersButton = document.getElementById("check-answers");
+        const quizResult = document.getElementById("quiz-result");
+
+        checkAnswersButton.addEventListener("click", () => {
+            const questions = document.querySelectorAll(".quiz-question");
+            let correctCount = 0;
+
+            questions.forEach(question => {
+                const correctAnswer = question.querySelector(".quiz-options").dataset.correct;
+                const selectedAnswer = question.querySelector(".quiz-options li.selected");
+
+                if (selectedAnswer && selectedAnswer.textContent === correctAnswer) {
+                    correctCount++;
+                }
+            });
+
+            quizResult.textContent = `Udzieliłeś poprawnych odpowiedzi na ${correctCount} z ${questions.length} pytań.`;
+            quizResult.style.display = "block";
+        });
+
+        document.querySelectorAll(".quiz-options li").forEach(option => {
+            option.addEventListener("click", () => {
+                const siblings = option.parentElement.querySelectorAll("li");
+                siblings.forEach(sibling => sibling.classList.remove("selected"));
+                option.classList.add("selected");
+            });
+        });
+    </script>
+  </body> 
 </html>
